@@ -4,12 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Posts | Home</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/scss/styles.scss">
+    <title>Men's Mental Health | Home</title>
 </head>
 <body>
     <!--HEADER-->
-    <header>
+    <header class="container-fluid d-flex justify-content-md-center gap-30 bg-primary"> 
+        <div class="row align-items-md-center justify-content-md-around">
+                <div class="col-6 bg-primary">
+                    <img src="./images/mmh_logo.png" class="img-fluid w-50">
+                </div>
 
+                <div class="col-6">
+                    <nav class="navbar bg-main_green navbar-expand-lg bg-light">
+                        <div class="container">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Feed Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Profile Page</a>
+                            </li>
+                            </ul>
+                        </div>
+                        </div>
+                    </nav>
+                </div>
+        </div> 
     </header>
     
     <!--MAIN-->

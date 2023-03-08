@@ -1,0 +1,18 @@
+@import "root";
+@import "variables"; /* /src/scss/_variables.scss */
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/functions";
+@import '../../node_modules/bootstrap/scss/variables';
+
+
+$primary: #60946A !default;
+$secondary: #508450;
+$tertiary: #524F45;
+
+
+
+
+.navbar {
+    color: red;
+}
+
