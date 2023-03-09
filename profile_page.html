@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/css/styles.css">
+    <title>Men's Mental Health | Home</title>
+</head>
+<body>
+    <!--HEADER-->
+    <header class="container-fluid d-flex justify-content-md-center gap-30 bg-primary"> 
+        <div class="row align-items-md-center justify-content-md-around">
+                <div class="col-6 bg-primary">
+                    <img src="./images/mmh_logo.png" class="img-fluid w-50">
+                </div>
+
+                <div class="col-6">
+                    <nav class="navbar bg-main_green navbar-expand-lg bg-primary">
+                        <div class="container">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Feed Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Profile Page</a>
+                            </li>
+                            </ul>
+                        </div>
+                        </div>
+                    </nav>
+                </div>
+        </div> 
+    </header>
+    
+    <!--MAIN-->
+    <main>
+        
+        <!--Page Tilte-->
+        <div class="container mt-5 pt-5">
+          <div class="row">
+            <div class="col-12 text-center mt-5">
+              <h1>PROFILE PAGE</h1>
+            </div>
+          </div>  
+        </div>
+
+        <!--User Profile & Friends List-->
+        <div class="container mt-5 pt-5">
+          <div class="row g-4">
+            <!--User Profile-->
+            <div class="col-sm-12 col-md-8 col-lg-8 p-4">
+              <h2 class="pb-3">User Profile</h2>
+              <div class="card mb-3 border-primary" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="./images/ar_profile.jpg" class="img-fluid rounded-start" alt="your profile picture">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Audun Roald</h5>
+                      <p class="card-text">This is where the users bio will be shown. They can write a short block of text that will describe them and their interests etc.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Friends List-->
+            <div class="col-sm-12 col-md-4 col-lg-4 p-4">
+              <h2 class="pb-3">Friends List</h2>
+              <div class="list-group">
+                <button type="button" class="list-group-item list-group-item-action active" aria-current="true"><img src="./images/man_1.jpg" class="img-thumbnail w-25" alt="profile picture of john doe">
+                  John Doe
+                </button>
+                <button type="button" class="list-group-item list-group-item-action"><img src="./images/woman_1.jpg" class="img-thumbnail w-25" alt="profile picture of Helena Carter">Helena Carter</button>
+                <button type="button" class="list-group-item list-group-item-action"><img src="./images/man_2.jpg" class="img-thumbnail w-25" alt="profile picture of Chris Woods">Chris Woods</button>
+                <button type="button" class="list-group-item list-group-item-action"><img src="./images/woman_2.jpg" class="img-thumbnail w-25" alt="profile picture of Carolina Henderson">Carolina Henderson</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--Forum Post Section-->
+        <div class="container mt-5 pt-5 p-4">
+          <!--Write a post-->
+          <div class="row g-4">
+            <h2>Write a new post:</h2>
+            <!--Add Title-->
+            <div class="input-group">
+              <span class="input-group-text">Title</span>
+              <input type="text" aria-label="Title" class="form-control">
+            </div>
+
+            
+            <!--Upload Image-->
+            <div class="input-group mb-3">
+              <input type="file" class="form-control" id="inputGroupFile02">
+              <label class="input-group-text" for="inputGroupFile02">Upload</label>
+            </div>
+
+            <!--Forum Textbox-->
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+              <label for="floatingTextarea2">Write your post here</label>
+            </div>
+          </div>
+        </div>
+
+
+        <!--List of posts-->
+        <div class="container mt-5 mb-5 pt-5 pb-5 p-4">
+          <div class="row">
+            <!--Heading-->
+            <h2>My posts:</h2>
+
+            <!--Posts-->
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col">
+                <div class="card h-100">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>    
+        </div>
+      
+    </main>
+
+    <!--FOOTER-->
+    <footer>
+
+    </footer>
+</body>
+</html>
