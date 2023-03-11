@@ -1,14 +1,14 @@
 import { API_LOGIN_URL } from "../api/api_constants.mjs";
 
 
-export async function loginUser(url, userData) {
+export async function loginUser(url, userProfile) {
     try{
         const postData = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(userData),
+            body: JSON.stringify(userProfile),
         }
 
         const response = await fetch(url, postData);
@@ -25,4 +25,4 @@ export async function loginUser(url, userData) {
 }
 
 
-loginUser(API_LOGIN_URL, userToLogin);
+loginUser(API_LOGIN_URL, userProfile);

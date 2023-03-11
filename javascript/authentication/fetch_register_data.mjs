@@ -6,11 +6,34 @@ import { register } from "./register_profile_function.mjs";
  * @param {object} userProfile This is the collection of all the data that the user sends in using the form on submit.
  */
 
-export function RegisterFormListener() {
-    const form = document.querySelector("#registerForm");
 
-    if (form) {
-        form.addEventListener("submit", (event) => {
+const registerForm = document.getElementById('registerForm');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+
+
+const usernameValue = username.value.trim();
+const emailValue = email.value.trim();
+const passwordValue = password.value.trim(); 
+
+
+
+const user = {
+    username: 'usernameValue',
+    email: emailValue,
+    password: passwordValue
+};
+
+const userProfile = JSON.stringify(user);
+console.log(userProfile);
+
+
+export function RegisterFormListener() {
+    const registerForm = document.querySelector("#registerForm");
+
+    if (registerForm) {
+        registerForm.addEventListener("submit", (event) => {
             event.preventDefault();
             const form = event.target;
             const formData = new FormData(form);
