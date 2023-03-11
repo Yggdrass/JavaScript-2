@@ -1,28 +1,42 @@
-import { API_LOGIN_URL } from "../api/api_constants.mjs";
+import { loginUser } from "./login_function.mjs";
+
+const queryString = document.location.search;
+
+//console.log(queryString);
+
+const params = new URLSearchParams(queryString);
+
+//console.log(params);
+
+const email = params.get("email");
+//console.log(email);
+const password = params.get("pswd");
+//console.log(pswd);
 
 
-export async function loginUser(url, userProfile) {
-    try{
-        const postData = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(userProfile),
-        }
 
-        const response = await fetch(url, postData);
-        console.log(response);
-        const json = await response.json();
-        console.log(json);
-        console.log(json.accesstoken);
-        const accessToken = json.accessToken;
-        localStorage.setItem('accessToken', accessToken);
-    }
-    catch(error){
-        console.log(error);
+const user = {
+    email: email,
+    password: password,
+};
+
+const userProfile = JSON.stringify(user);
+//console.log(userProfile);
+
+
+export function loginFormListener() {
+    const loginForm = document.querySelector("#loginForm");
+
+    if (loginForm) {
+        loginForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const userProfile = Object.fromEntries(formData.entries());
+            console.log(userProfile);
+
+            loginUser(userProfile);
+        });
     }
 }
 
-
-loginUser(API_LOGIN_URL, userProfile);
