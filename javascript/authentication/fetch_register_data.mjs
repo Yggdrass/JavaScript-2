@@ -1,4 +1,5 @@
-import { register } from "./register_profile_function.mjs";
+import { registerUser } from "./register_profile_function.mjs";
+import { API_BASE_SOCIAL_URL } from "../api/api_constants.mjs";
 
 /**
  * @param {element} form This is the element where the form is located on the website, and where the user inputs their information to register.
@@ -7,39 +8,63 @@ import { register } from "./register_profile_function.mjs";
  */
 
 
-const registerForm = document.getElementById('registerForm');
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
+/*const registerForm = document.getElementById('registerForm');
+let username = document.getElementById('username').value;
+const email = document.getElementById('email').value;
+const password = document.getElementById('password').value;
+
+console.log(username);*/
 
 
-const usernameValue = username.value.trim();
-const emailValue = email.value.trim();
-const passwordValue = password.value.trim(); 
+const registerURL = `${API_BASE_SOCIAL_URL}/auth/register`;
 
 
 
-const user = {
-    username: 'usernameValue',
-    email: emailValue,
-    password: passwordValue
+const queryString = document.location.search;
+
+//console.log(queryString);
+
+const params = new URLSearchParams(queryString);
+
+//console.log(params);
+
+const username = params.get("username");
+//console.log(username);
+const email = params.get("email");
+//console.log(email);
+const password = params.get("password");
+//console.log(password);
+
+
+
+const userToRegister = {
+    name: username,
+    email: email,
+    password: password
 };
+//console.log(userToRegister);
 
-const userProfile = JSON.stringify(user);
-console.log(userProfile);
+const userProfile = JSON.stringify(userToRegister);
+//console.log(userProfile);
 
 
-export function RegisterFormListener() {
-    const registerForm = document.querySelector("#registerForm");
 
-    if (registerForm) {
-        registerForm.addEventListener("submit", (event) => {
+
+
+
+export function registerFormListener() {
+    const form = document.querySelector("#registerForm");
+
+    if (form) {
+        form.addEventListener("submit", (event) => {
             event.preventDefault();
             const form = event.target;
             const formData = new FormData(form);
             const userProfile = Object.fromEntries(formData.entries());
+            //console.log(userProfile);
 
-            register(userProfile);
+            registerUser(registerURL, userToRegister);
+            console.log(registerUser);
         });
     }
 }
