@@ -1,4 +1,4 @@
-import { registerUser } from "./register_profile_function.mjs";
+import { registerUser } from "./register_function.mjs";
 import { API_BASE_SOCIAL_URL } from "../api/api_constants.mjs";
 
 /**
