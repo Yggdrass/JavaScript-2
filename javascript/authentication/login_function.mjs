@@ -1,26 +1,38 @@
 import { API_BASE_SOCIAL_URL } from "../api/api_constants.mjs";
 
-const queryString = document.location.search;
+const parameterString = window.location.search;
+console.log(parameterString);
 
-console.log(queryString);
+const searchParameters = new URLSearchParams(parameterString);
+console.log(searchParameters);
 
-const params = new URLSearchParams(queryString);
+for (const parameter of searchParameters) {
+    console.log(parameter);
+}
 
-console.log(params);
 
-const email = params.get("email");
-console.log(email);
-const password = params.get("pswd");
-console.log(password);
+
+const [email, password] = searchParameters;
+console.log(email, password);
 
 
 
 const userToLogin = {
-    email: email,
-    password: password,
+    email: searchParameters.get('email'),
+    password: searchParameters.get('pswd'),
 };
 
+
+/*const userToLogin = {
+    email: 'AudRoa43553@stud.noroff.no',
+    password: '12345678',
+};*/
+
 console.log(userToLogin);
+
+
+
+
 
 
 const loginURL = `${API_BASE_SOCIAL_URL}/auth/login`;
@@ -40,6 +52,9 @@ export async function loginUser(url, userData) {
         console.log(response);
         const json = await response.json();
         console.log(json);
+        console.log(accessToken);
+        const accessToken = json.accessToken;
+        localStorage.setItem('accessToken', accessToken);
     }
     catch(error){
         console.log(error);
