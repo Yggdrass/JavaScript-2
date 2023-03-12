@@ -27,13 +27,13 @@ const password = params.get("password");
 
 
 
-const userToRegister = {
+/*const userToRegister = {
     name: username,
     email: email,
     password: password
-};
+};*/
 
-
+const userToRegister = params;
 
 
 
