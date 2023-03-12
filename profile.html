@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="dist/css/styles.css">
+    <script defer type="module" src="./javascript/authentication/posts/posts_get_all.mjs"></script>
     <title>Men's Mental Health | Home</title>
 </head>
 <body>
@@ -28,7 +29,7 @@
                                 <a class="nav-link active" href="/index.html">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">Feed Page</a>
+                                <a class="nav-link" aria-current="page" href="/feed_page.html">Feed Page</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Profile Page</a>
@@ -78,12 +79,12 @@
             <div class="col-sm-12 col-md-4 col-lg-4 p-4">
               <h2 class="pb-3">Friends List</h2>
               <div class="list-group">
-                <button type="button" class="list-group-item list-group-item-action active" aria-current="true"><img src="./images/man_1.jpg" class="img-thumbnail w-25" alt="profile picture of john doe">
+                <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
                   John Doe
                 </button>
-                <button type="button" class="list-group-item list-group-item-action"><img src="./images/woman_1.jpg" class="img-thumbnail w-25" alt="profile picture of Helena Carter">Helena Carter</button>
-                <button type="button" class="list-group-item list-group-item-action"><img src="./images/man_2.jpg" class="img-thumbnail w-25" alt="profile picture of Chris Woods">Chris Woods</button>
-                <button type="button" class="list-group-item list-group-item-action"><img src="./images/woman_2.jpg" class="img-thumbnail w-25" alt="profile picture of Carolina Henderson">Carolina Henderson</button>
+                <button type="button" class="list-group-item list-group-item-action">Helena Carter</button>
+                <button type="button" class="list-group-item list-group-item-action">Chris Woods</button>
+                <button type="button" class="list-group-item list-group-item-action">Carolina Henderson</button>
               </div>
             </div>
           </div>
@@ -120,46 +121,11 @@
         <div class="container mt-5 mb-5 pt-5 pb-5 p-4">
           <div class="row">
             <!--Heading-->
-            <h2>My posts:</h2>
+            <h2>Post feed:</h2>
 
             <!--Posts-->
             <div class="row row-cols-1 row-cols-md-3 g-4">
-              <div class="col">
-                <div class="card h-100">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </div>
-                </div>
-              </div>
+              <div class="col postfeed"></div>
             </div>
 
           </div>    

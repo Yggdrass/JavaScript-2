@@ -1,21 +1,15 @@
-import { API_ALL_POSTS_URL } from "../../api_url.mjs"
-
-/**
- * Tis function gets all posts and shows them on the feed_page.html and the profile.html pages.
- * @params {} feedContainer This is the <div> located on the pages where the posts will be displayed.
- * @params {} token This is the token that the user gets, and is stored in localstorage.
- * @params {} fetchOptions This is the options for sending the token in order to get access to the API-url.
- * @params {} feedContainer.innerHTML This how the posts will be displayed on the page.
- * */
+import { API_ONE_POST_URL } from "../../api_url.mjs"
 
 
-const postsGetAllUrl = `${API_ALL_POSTS_URL}`;
+const postsGetOneUrl = `${API_ONE_POST_URL}`;
 const feedContainer = document.querySelector(".postfeed");
 
+/**
+ * 
+ * @param {*} url This is the where the url to get access to posts are set.
+ */
 
-
-
-export async function getAllPosts(url) {
+export async function getOnePost(url) {
     try {
         console.log(url);
         const token = localStorage.getItem('accessToken');
@@ -40,7 +34,7 @@ export async function getAllPosts(url) {
                 break;
             }
 
-            feedContainer.innerHTML += `<a href="/post.html?postID=${json[i].id}"><div class="bg-primary border-5"><h2>${json[i].title}</h2>
+            feedContainer.innerHTML += `<a href="/post.html?${json[i].id}"><div class="bg-primary border-5"><h2>${json[i].title}</h2>
                                                <img src="${json[i].media}" class="img-fluid"/>
                                                <p class="card-text bg-secondary">"${json[i].body}"</p>
                                                <p>Post id: ${json[i].id}</p>
@@ -52,4 +46,4 @@ export async function getAllPosts(url) {
     }
 };
 
-getAllPosts(postsGetAllUrl);
+getOnePost(postsGetOneUrl);
