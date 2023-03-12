@@ -1,9 +1,7 @@
-import { API_REGISTER_URL } from "../api_url";
+import { API_REGISTER_URL } from "../../api_url.mjs";
 
 const registerURL = `${API_REGISTER_URL}`;
 
-
-console.log(userToRegister);
 
 export async function registerUser(url, userData) {
     console.log(url, userData);

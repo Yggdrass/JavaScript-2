@@ -1,8 +1,9 @@
-import { loginUser } from "../../api/api_functions/login_to_api_function.js";
-import { API_LOGIN_URL } from "../../api/api_constants.js";
+import { loginUser } from "../api_functions/login_to_api.mjs";
+import { API_LOGIN_URL } from "../../api_url.mjs";
 
 
 const loginURL = `${API_LOGIN_URL}`;
+console.log(loginURL);
 
 export function loginFormListener() {
     const loginForm = document.querySelector("#loginForm");
