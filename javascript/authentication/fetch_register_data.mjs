@@ -37,14 +37,14 @@ const password = params.get("password");
 
 
 
-const userToRegister = {
+const userRegisterInput = {
     name: username,
     email: email,
     password: password
 };
 //console.log(userToRegister);
 
-const userProfile = JSON.stringify(userToRegister);
+const userToRegister = JSON.stringify(userRegisterInput);
 //console.log(userProfile);
 
 
@@ -60,7 +60,7 @@ export function registerFormListener() {
             event.preventDefault();
             const form = event.target;
             const formData = new FormData(form);
-            const userProfile = Object.fromEntries(formData.entries());
+            const userToRegister = Object.fromEntries(formData.entries());
             //console.log(userProfile);
 
             registerUser(registerURL, userToRegister);
