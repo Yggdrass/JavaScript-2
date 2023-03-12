@@ -32,6 +32,12 @@ export async function loginUser(url, userData) {
 
         localStorage.setItem('accessToken', accessToken);
 
+        if (response.ok) {
+            alert("You have successfully logged in!");
+        } else {
+            alert("Error! Login failed!");
+        }
+        return result;
     } catch(error) {
         console.log(error);
     }
