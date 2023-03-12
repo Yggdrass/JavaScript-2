@@ -64,7 +64,7 @@ export async function registerUser(url, userData) {
 }
 
 
-registerUser(registerURL, userToRegister);
+//registerUser(registerURL, userToRegister);
 
 
 
