@@ -1,13 +1,13 @@
-import { API_LOGIN_URL } from "../api_url.js";
+import { API_LOGIN_URL } from "../../api_url.mjs";
 
 
 
 
 
-const userToLogin = {
-    email: 'AudRoa43553@2stud.noroff.no',
-    password: '12345678',
-};
+// const userToLogin = {
+//     email: 'audunMMH@stud.noroff.no',
+//     password: '12345678',
+// };
 
 const loginURL = `${API_LOGIN_URL}`;
 
@@ -23,14 +23,14 @@ export async function loginUser(url, userData) {
             body: JSON.stringify(userData),
         }
         const response = await fetch(url, postData);
-        console.log(response);
+        //console.log(response);
         const json = await response.json();
-        console.log(json);
+        //console.log(json);
 
-        // console.log(json.accessToken);
-        // const accessToken = json.accessToken;
+        //console.log(json.accessToken);
+        const accessToken = json.accessToken;
 
-        // localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('accessToken', accessToken);
 
     } catch(error) {
         console.log(error);
@@ -43,6 +43,6 @@ export async function loginUser(url, userData) {
 
 
 
-loginUser(loginURL, userToLogin);
+//loginUser(loginURL, userToLogin);
 
 

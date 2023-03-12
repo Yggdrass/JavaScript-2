@@ -1,5 +1,7 @@
+import { API_ALL_POSTS_URL } from "../../api_url.mjs"
 
-import { API_SOCIAL_POST_URL } from "../api/api_url.js";
+
+const postsGetAllUrl = `${API_ALL_POSTS_URL}`;
 
 export async function getAllPosts(url) {
     try {
@@ -9,18 +11,18 @@ export async function getAllPosts(url) {
         const fetchOptions = {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json',
-                Authorization : `Bearer ${token}` ,
+                'Content-Type': 'aplication/json',
+                'Authorization': `Bearer ${token}`,
             },
-        }
+        };
+
         const response = await fetch(url, fetchOptions);
         console.log(response);
         const json = await response.json();
         console.log(json);
-    }
-    catch(error) {
+    } catch (error) {
         console.log(error);
     }
-}
+};
 
-getAllPosts();
+getAllPosts(postsGetAllUrl);
