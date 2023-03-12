@@ -1,5 +1,5 @@
 
-import { API_SOCIAL_POST_URL } from "../api/api_constants.mjs";
+import { API_SOCIAL_POST_URL } from "../api/api_url.js";
 
 export async function getAllPosts(url) {
     try {

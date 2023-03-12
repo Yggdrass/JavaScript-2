@@ -1,13 +1,9 @@
+import { API_REGISTER_URL } from "../api_url";
 
-/**
- * This is first part imports the API_URL from api_constants.mjs.
- * This function is then used later to post the users inputs when registering on the website.
- */
+const registerURL = `${API_REGISTER_URL}`;
 
-import { API_BASE_SOCIAL_URL } from "../api/api_constants.mjs";
 
-const registerURL = `${API_BASE_SOCIAL_URL}/auth/register`;
-
+console.log(userToRegister);
 
 export async function registerUser(url, userData) {
     console.log(url, userData);
@@ -32,6 +28,3 @@ export async function registerUser(url, userData) {
 
 
 //registerUser(registerURL, userToRegister);
-
-
-

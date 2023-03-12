@@ -1,13 +1,8 @@
-import { registerUser } from "./register_function.mjs";
-import { API_BASE_SOCIAL_URL } from "../api/api_constants.mjs";
+import { registerUser } from "../../api/api_functions/register_to_api_function.js";
+import { API_REGISTER_URL } from "../api/api_constants.js";
 
 
-
-const registerURL = `${API_BASE_SOCIAL_URL}/auth/register`;
-
-
-
-
+const registerURL = `${API_REGISTER_URL}`;
 
 
 export function registerFormListener() {
@@ -17,7 +12,7 @@ export function registerFormListener() {
         registerForm.addEventListener("submit", (event) => {
             event.preventDefault();
             const form = event.target;
-            //console.log(form);
+            console.log(form);
             const formData = new FormData(form);
             const userToRegister = Object.fromEntries(formData.entries());
             console.log(userToRegister);
